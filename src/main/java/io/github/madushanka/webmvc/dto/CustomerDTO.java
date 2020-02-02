@@ -1,6 +1,7 @@
 package io.github.madushanka.webmvc.dto;
 
 public class CustomerDTO {
+
     private String id;
     private String name;
     private String address;
