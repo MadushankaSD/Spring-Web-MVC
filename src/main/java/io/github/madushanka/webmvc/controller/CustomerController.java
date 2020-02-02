@@ -43,12 +43,12 @@ public class CustomerController {
     }
 
     @GetMapping(params = "q=last", consumes = MediaType.TEXT_HTML_VALUE)
-    public String getLastCustomerId() {
+    public String getLastCustomerId(@RequestParam String q) {
         return customerBO.getLastCustomerId();
     }
 
     @GetMapping(params = "q=full", consumes = MediaType.APPLICATION_JSON_VALUE)
-    private List<String> getAllCustomerId() {
+    private List<String> getAllCustomerId(@RequestParam String q) {
         return customerBO.getAllCustomerIDs();
     }
 }
