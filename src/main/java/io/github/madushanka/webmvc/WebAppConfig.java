@@ -6,6 +6,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("io.github.madushanka.webmvc.controller")
+@ComponentScan("io.github.madushanka.webmvc")
 public class WebAppConfig {
 }
