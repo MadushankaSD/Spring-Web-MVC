@@ -22,7 +22,7 @@ public class CustomerController {
         customerBO.saveCustomer(customer);
     }
 
-    @GetMapping(params="/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value="/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
     public CustomerDTO getCustomer(@PathVariable String id){
         System.out.println("Run me get OneCustomer");
         return customerBO.findCustomer(id);
