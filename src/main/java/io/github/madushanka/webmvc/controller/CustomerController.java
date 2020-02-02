@@ -42,13 +42,14 @@ public class CustomerController {
         customerBO.updateCustomer(customer);
     }
 
-    @GetMapping(params = "q=last", consumes = MediaType.TEXT_HTML_VALUE)
-    public String getLastCustomerId(@RequestParam String q) {
+    @GetMapping(params = {"last"})
+    public String getLastCustomerId() {
         return customerBO.getLastCustomerId();
     }
 
-    @GetMapping(params = "q=full", consumes = MediaType.APPLICATION_JSON_VALUE)
-    private List<String> getAllCustomerId(@RequestParam String q) {
+    @GetMapping(params = {"full"})
+    public List<String> getAllId() {
         return customerBO.getAllCustomerIDs();
     }
+
 }
