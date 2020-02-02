@@ -8,10 +8,10 @@ import java.util.List;
 
 public interface OrderBO extends SuperBO {
 
-    int getLastOrderId() throws Exception;
+    int getLastOrderId();
 
-    void placeOrder(OrderDTO orderDTO) throws Exception;
+    void placeOrder(OrderDTO orderDTO);
 
-    List<OrderDTO2> getOrderInfo() throws Exception;
+    List<OrderDTO2> getOrderInfo();
 
 }

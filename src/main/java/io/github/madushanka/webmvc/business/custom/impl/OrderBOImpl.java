@@ -33,7 +33,7 @@ public class OrderBOImpl implements OrderBO {
     private CustomerDAO customerDAO;
 
     @Override
-    public int getLastOrderId() throws Exception {
+    public int getLastOrderId()  {
 
             int lastOrderId = orderDAO.getLastOrderId();
 
@@ -43,7 +43,7 @@ public class OrderBOImpl implements OrderBO {
     }
 
     @Override
-    public void placeOrder(OrderDTO order) throws Exception {
+    public void placeOrder(OrderDTO order)  {
 
             int oId = order.getId();
             orderDAO.save(new Order(oId, new java.sql.Date(new Date().getTime()),customerDAO.find(order.getCustomerId())));
@@ -60,7 +60,7 @@ public class OrderBOImpl implements OrderBO {
     }
 
     @Override
-    public List<OrderDTO2> getOrderInfo() throws Exception {
+    public List<OrderDTO2> getOrderInfo()  {
 
             List<CustomEntity> ordersInfo = queryDAO.getOrderInfo();
             List<OrderDTO2> dtos = new ArrayList<>();

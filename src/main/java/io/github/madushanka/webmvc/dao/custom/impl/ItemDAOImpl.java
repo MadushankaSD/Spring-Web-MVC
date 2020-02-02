@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 public class ItemDAOImpl extends CrudDAOImpl<Item,String> implements ItemDAO {
 
     @Override
-    public String getLastItemCode() throws Exception {
+    public String getLastItemCode()  {
        return (String) getSession().createNativeQuery("SELECT code FROM Item ORDER BY code DESC LIMIT 1").uniqueResult();
     }
 

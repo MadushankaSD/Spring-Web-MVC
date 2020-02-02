@@ -11,13 +11,13 @@ import org.springframework.stereotype.Repository;
 public class OrderDAOImpl extends CrudDAOImpl<Order,Integer> implements OrderDAO {
 
     @Override
-    public int getLastOrderId() throws Exception {
+    public int getLastOrderId()  {
         Object object = getSession().createNativeQuery("SELECT id FROM `order` ORDER BY id DESC LIMIT 1").uniqueResult();
         return object==null?0: (int) object;
     }
 
     @Override
-    public boolean existsByCustomerId(String customerId) throws Exception {
+    public boolean existsByCustomerId(String customerId)  {
         NativeQuery nativeQuery = getSession().createNativeQuery("SELECT * FROM `order` WHERE customerId=? LIMIT 1");
         nativeQuery.setParameter(1, customerId);
 

@@ -5,6 +5,6 @@ import io.github.madushanka.webmvc.entity.Customer;
 
 public interface CustomerDAO extends CrudDAO<Customer, String> {
 
-    String getLastCustomerId() throws Exception;
+    String getLastCustomerId() ;
 
 }

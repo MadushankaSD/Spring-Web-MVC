@@ -24,21 +24,21 @@ public class ItemBOImpl implements ItemBO {
     private ItemDAO itemDAO ;
 
     @Override
-    public void saveItem(ItemDTO item) throws Exception {
+    public void saveItem(ItemDTO item)  {
             itemDAO.save(new Item(item.getCode(),
                     item.getDescription(), item.getUnitPrice(), item.getQtyOnHand()));
 
     }
 
     @Override
-    public void updateItem(ItemDTO item) throws Exception {
+    public void updateItem(ItemDTO item)  {
 
             itemDAO.update(new Item(item.getCode(),
                     item.getDescription(), item.getUnitPrice(), item.getQtyOnHand()));
     }
 
     @Override
-    public void deleteItem(String itemCode) throws Exception {
+    public void deleteItem(String itemCode)  {
 
             if (orderDetailDAO.existsByItemCode(itemCode)) {
                 new Alert(Alert.AlertType.WARNING,"Item already exists in an order, hence unable to delete", ButtonType.OK).show();
@@ -49,7 +49,7 @@ public class ItemBOImpl implements ItemBO {
     }
 
     @Override
-    public List<ItemDTO> findAllItems() throws Exception {
+    public List<ItemDTO> findAllItems()  {
             List<Item> allItems = itemDAO.findAll();
             List<ItemDTO> dtos = new ArrayList<>();
             for (Item item : allItems) {
@@ -64,13 +64,13 @@ public class ItemBOImpl implements ItemBO {
     }
 
     @Override
-    public String getLastItemCode() throws Exception {
+    public String getLastItemCode()  {
             String lastItemCode = itemDAO.getLastItemCode();
             return lastItemCode;
     }
 
     @Override
-    public ItemDTO findItem(String itemCode) throws Exception {
+    public ItemDTO findItem(String itemCode)  {
 
             Item item = itemDAO.find(itemCode);
 
@@ -82,7 +82,7 @@ public class ItemBOImpl implements ItemBO {
     }
 
     @Override
-    public List<String> getAllItemCodes() throws Exception {
+    public List<String> getAllItemCodes()  {
             List<Item> allItems = itemDAO.findAll();
 
             List<String> codes = new ArrayList<>();

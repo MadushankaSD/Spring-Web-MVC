@@ -24,17 +24,17 @@ public class CustomerBOImpl implements CustomerBO {
     private OrderDAO orderDAO;
 
     @Override
-    public void saveCustomer(CustomerDTO customer) throws Exception {
+    public void saveCustomer(CustomerDTO customer)  {
             customerDAO.save(new Customer(customer.getId(), customer.getName(), customer.getAddress()));
     }
 
     @Override
-    public void updateCustomer(CustomerDTO customer) throws Exception {
+    public void updateCustomer(CustomerDTO customer)  {
             customerDAO.update(new Customer(customer.getId(), customer.getName(), customer.getAddress()));
     }
 
     @Override
-    public void deleteCustomer(String customerId) throws Exception {
+    public void deleteCustomer(String customerId)  {
 
             if (orderDAO.existsByCustomerId(customerId)) {
                 new Alert(Alert.AlertType.WARNING,"This customer Has Already a Order", ButtonType.OK).show();
@@ -45,7 +45,7 @@ public class CustomerBOImpl implements CustomerBO {
     }
 
     @Override
-    public List<CustomerDTO> findAllCustomers() throws Exception {
+    public List<CustomerDTO> findAllCustomers()  {
             List<Customer> alCustomers = customerDAO.findAll();
 
             List<CustomerDTO> dtos = new ArrayList<>();
@@ -57,7 +57,7 @@ public class CustomerBOImpl implements CustomerBO {
     }
 
     @Override
-    public String getLastCustomerId() throws Exception {
+    public String getLastCustomerId()  {
 
             String lastCustomerId = customerDAO.getLastCustomerId();
 
@@ -66,7 +66,7 @@ public class CustomerBOImpl implements CustomerBO {
     }
 
     @Override
-    public CustomerDTO findCustomer(String customerId) throws Exception {
+    public CustomerDTO findCustomer(String customerId)  {
 
             Customer customer = customerDAO.find(customerId);
 
@@ -76,7 +76,7 @@ public class CustomerBOImpl implements CustomerBO {
     }
 
     @Override
-    public List<String> getAllCustomerIDs() throws Exception {
+    public List<String> getAllCustomerIDs()  {
             List<Customer> customers = customerDAO.findAll();
             List<String> ids = new ArrayList<>();
             for (Customer customer : customers) {

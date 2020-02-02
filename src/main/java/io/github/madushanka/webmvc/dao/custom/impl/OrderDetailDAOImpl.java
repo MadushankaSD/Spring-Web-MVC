@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public class OrderDetailDAOImpl extends CrudDAOImpl<OrderDetail, OrderDetailPK> implements OrderDetailDAO {
 
     @Override
-    public boolean existsByItemCode(String itemCode) throws Exception {
+    public boolean existsByItemCode(String itemCode)  {
        return getSession().createNativeQuery("SELECT * FROM OrderDetail WHERE Item_id=? LIMIT 1").setParameter(1, itemCode).uniqueResult() !=null;
     }
 }

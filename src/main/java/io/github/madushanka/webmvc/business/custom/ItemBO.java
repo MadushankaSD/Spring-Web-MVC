@@ -8,18 +8,18 @@ import java.util.List;
 
 public interface ItemBO extends SuperBO {
 
-    void saveItem(ItemDTO itemDTO) throws Exception;
+    void saveItem(ItemDTO itemDTO) ;
 
-    void updateItem(ItemDTO item) throws Exception;
+    void updateItem(ItemDTO item) ;
 
-    void deleteItem(String itemCode) throws Exception;
+    void deleteItem(String itemCode);
 
-    List<ItemDTO> findAllItems() throws Exception;
+    List<ItemDTO> findAllItems() ;
 
-    String getLastItemCode() throws Exception;
+    String getLastItemCode() ;
 
-    ItemDTO findItem(String itemCode) throws Exception;
+    ItemDTO findItem(String itemCode) ;
 
-    List<String> getAllItemCodes() throws Exception;
+    List<String> getAllItemCodes() ;
 
 }

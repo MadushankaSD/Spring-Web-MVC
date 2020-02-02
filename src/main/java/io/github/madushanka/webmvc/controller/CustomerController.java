@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api/v1/customers")
 public class CustomerController {
 
+    public void saveCustomer(){
 
+    }
 
 }

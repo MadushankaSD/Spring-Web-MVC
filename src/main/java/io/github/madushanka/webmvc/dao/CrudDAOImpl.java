@@ -20,27 +20,27 @@ public abstract class CrudDAOImpl<T extends SuperEntity, ID extends Serializable
     }
 
     @Override
-    public List<T> findAll() throws Exception {
+    public List<T> findAll()  {
          return getSession().createQuery("FROM "+entity.getName()).list();
     }
 
     @Override
-    public T find(ID id) throws Exception {
+    public T find(ID id)  {
         return getSession().get(entity,id);
     }
 
     @Override
-    public void save(T entity) throws Exception {
+    public void save(T entity)  {
         getSession().save(entity);
     }
 
     @Override
-    public void update(T entity) throws Exception {
+    public void update(T entity)  {
         getSession().saveOrUpdate(entity);
     }
 
     @Override
-    public void delete(ID id) throws Exception {
+    public void delete(ID id)  {
         getSession().delete(getSession().load(entity,id));
     }
 

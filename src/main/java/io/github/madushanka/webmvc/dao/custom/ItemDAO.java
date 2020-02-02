@@ -6,5 +6,5 @@ import io.github.madushanka.webmvc.entity.Item;
 
 public interface ItemDAO extends CrudDAO<Item, String> {
 
-    String getLastItemCode() throws Exception;
+    String getLastItemCode() ;
 }
