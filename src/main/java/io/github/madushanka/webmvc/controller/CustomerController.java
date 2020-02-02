@@ -18,36 +18,37 @@ public class CustomerController {
     private CustomerBO customerBO;
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void saveCustomer(@RequestBody CustomerDTO customer){
+    public void saveCustomer(@RequestBody CustomerDTO customer) {
         customerBO.saveCustomer(customer);
     }
 
-    @GetMapping(value="/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public CustomerDTO getCustomer(@PathVariable String id){
-        System.out.println("Run me get OneCustomer");
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public CustomerDTO getCustomer(@PathVariable String id) {
         return customerBO.findCustomer(id);
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<CustomerDTO> getAllCustomer(){
-        System.out.println("Run me get all");
+    public List<CustomerDTO> getAllCustomer() {
         return customerBO.findAllCustomers();
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteCustomer(@PathVariable String id){
+    @DeleteMapping(value = "/{id}")
+    public void deleteCustomer(@PathVariable String id) {
         customerBO.deleteCustomer(id);
     }
-    @PutMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void updateCustomer(@PathVariable String id,@RequestBody CustomerDTO customer){
+
+    @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void updateCustomer(@RequestParam String id, @RequestBody CustomerDTO customer) {
         customerBO.updateCustomer(customer);
     }
-    @GetMapping(params = "q=last",consumes = MediaType.TEXT_HTML_VALUE)
-    public String getLastCustomerId(){
+
+    @GetMapping(params = "q=last", consumes = MediaType.TEXT_HTML_VALUE)
+    public String getLastCustomerId() {
         return customerBO.getLastCustomerId();
     }
-    @GetMapping(params = "q=full",consumes =MediaType.APPLICATION_JSON_VALUE)
-    private List<String> getAllCustomerId(){
+
+    @GetMapping(params = "q=full", consumes = MediaType.APPLICATION_JSON_VALUE)
+    private List<String> getAllCustomerId() {
         return customerBO.getAllCustomerIDs();
     }
 }
