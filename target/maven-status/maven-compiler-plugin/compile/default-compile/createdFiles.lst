@@ -13,7 +13,6 @@ io/github/madushanka/webmvc/business/custom/ItemBO.class
 io/github/madushanka/webmvc/WebRootConfig.class
 io/github/madushanka/webmvc/dao/CrudDAOImpl.class
 io/github/madushanka/webmvc/entity/SuperEntity.class
-io/github/madushanka/webmvc/controller/SearchController.class
 io/github/madushanka/webmvc/dao/custom/impl/CustomerDAOImpl.class
 io/github/madushanka/webmvc/dao/SuperDAO.class
 io/github/madushanka/webmvc/dto/ItemDTO.class

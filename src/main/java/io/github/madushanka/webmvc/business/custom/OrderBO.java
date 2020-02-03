@@ -12,6 +12,6 @@ public interface OrderBO extends SuperBO {
 
     void placeOrder(OrderDTO orderDTO);
 
-    List<OrderDTO2> getOrderInfo();
+    List<OrderDTO2> getOrderInfo(String query);
 
 }

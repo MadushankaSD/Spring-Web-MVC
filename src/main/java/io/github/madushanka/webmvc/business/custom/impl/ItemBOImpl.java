@@ -74,10 +74,10 @@ public class ItemBOImpl implements ItemBO {
 
             Item item = itemDAO.find(itemCode);
 
-            return new ItemDTO(item.getCode(),
+            return item!=null?new ItemDTO(item.getCode(),
                     item.getDescription(),
                     item.getQtyOnHand(),
-                    item.getUnitPrice());
+                    item.getUnitPrice()):null;
 
     }
 

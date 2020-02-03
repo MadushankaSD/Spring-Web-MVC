@@ -4,6 +4,7 @@ package io.github.madushanka.webmvc.dao.custom.impl;
 
 import io.github.madushanka.webmvc.dao.custom.QueryDAO;
 import io.github.madushanka.webmvc.entity.CustomEntity;
+import io.github.madushanka.webmvc.entity.OrderDetail;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.NativeQuery;
@@ -21,12 +22,15 @@ public class QueryDAOImpl implements QueryDAO {
     private SessionFactory sessionFactory;
 
     @Override
-    public List<CustomEntity> getOrderInfo()  {
-        NativeQuery nativeQuery = getSession().createNativeQuery("SELECT o.id as orderId, c.customerId as customerId, c.name as customerName, o.date as orderDate, SUM(od.qty * od.unitPrice) AS orderTotal  FROM Customer c INNER JOIN `order` o ON c.customerId=o.customerID INNER JOIN OrderDetail od on o.id = od.Order_id GROUP BY o.id");
+    public List<CustomEntity> getOrderInfo(String query)  {
+        NativeQuery ps = getSession().createNativeQuery("SELECT OD.Order_id as orderId, o.date as orderDate , C.customerId as customerId , C.name as customerName , (OD.qty*OD.unitPrice) AS orderTotal FROM Customer C INNER JOIN `order` o on C.customerId = o.customerID INNER JOIN OrderDetail OD on o.id = OD.Order_id INNER JOIN Item I on OD.Item_id = I.code WHERE o.id LIKE ? OR C.customerId LIKE ? OR C.name LIKE ? OR o.date LIKE ?");
+        ps.setParameter(1, "%" + query + "%");
+        ps.setParameter(2, "%" + query + "%");
+        ps.setParameter(3, "%" + query + "%");
+        ps.setParameter(4, "%" + query + "%");
 
-        Query<CustomEntity> query = nativeQuery.setResultTransformer(Transformers.aliasToBean(CustomEntity.class));
-        List<CustomEntity> list = query.list();
-        System.out.println(list.toString());
+        Query<CustomEntity> dta = ps.setResultTransformer(Transformers.aliasToBean(CustomEntity.class));
+        List<CustomEntity> list = dta.list();
         return list;
 }
     @Override

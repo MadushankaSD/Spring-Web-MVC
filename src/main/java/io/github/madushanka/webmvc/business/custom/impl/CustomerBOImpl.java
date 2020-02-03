@@ -5,6 +5,7 @@ import io.github.madushanka.webmvc.dao.custom.CustomerDAO;
 import io.github.madushanka.webmvc.dao.custom.OrderDAO;
 import io.github.madushanka.webmvc.dao.custom.OrderDetailDAO;
 import io.github.madushanka.webmvc.dto.CustomerDTO;
+import io.github.madushanka.webmvc.dto.ItemDTO;
 import io.github.madushanka.webmvc.entity.Customer;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -59,21 +60,16 @@ public class CustomerBOImpl implements CustomerBO {
 
     @Override
     public String getLastCustomerId()  {
-
             String lastCustomerId = customerDAO.getLastCustomerId();
-
             return lastCustomerId;
 
     }
 
     @Override
     public CustomerDTO findCustomer(String customerId)  {
-
             Customer customer = customerDAO.find(customerId);
-
-            return new CustomerDTO(customer.getCustomerId(),
-                    customer.getName(), customer.getAddress());
-
+        return customer!=null?new CustomerDTO(customer.getCustomerId(),
+                customer.getName(), customer.getAddress()):null;
     }
 
     @Override

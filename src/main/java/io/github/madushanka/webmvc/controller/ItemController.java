@@ -1,10 +1,13 @@
 package io.github.madushanka.webmvc.controller;
 
+
 import io.github.madushanka.webmvc.business.custom.ItemBO;
-import io.github.madushanka.webmvc.dto.CustomerDTO;
 import io.github.madushanka.webmvc.dto.ItemDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +20,7 @@ public class ItemController {
     @Autowired
     private ItemBO itemBO;
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public void saveItem(@RequestBody ItemDTO item) {
         itemBO.saveItem(item);
@@ -28,10 +32,14 @@ public class ItemController {
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<ItemDTO> getAllItems() {
-        return itemBO.findAllItems();
+    public ResponseEntity<List<ItemDTO>> getAllItems() {
+        List<ItemDTO> allItems = itemBO.findAllItems();
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.add("X-Count",allItems.size()+"");
+        return new ResponseEntity<>(allItems,httpHeaders, HttpStatus.OK);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping(value = "/{id}")
     public void deleteItem(@PathVariable String id) {
         itemBO.deleteItem(id);

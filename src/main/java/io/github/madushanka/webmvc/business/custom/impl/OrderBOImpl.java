@@ -34,11 +34,7 @@ public class OrderBOImpl implements OrderBO {
 
     @Override
     public int getLastOrderId()  {
-
-            int lastOrderId = orderDAO.getLastOrderId();
-
-            return lastOrderId;
-
+           return orderDAO.getLastOrderId();
 
     }
 
@@ -60,9 +56,9 @@ public class OrderBOImpl implements OrderBO {
     }
 
     @Override
-    public List<OrderDTO2> getOrderInfo()  {
+    public List<OrderDTO2> getOrderInfo(String query)  {
 
-            List<CustomEntity> ordersInfo = queryDAO.getOrderInfo();
+            List<CustomEntity> ordersInfo = queryDAO.getOrderInfo(query);
             List<OrderDTO2> dtos = new ArrayList<>();
             for (CustomEntity info : ordersInfo) {
                 dtos.add(new OrderDTO2(info.getOrderId(),
