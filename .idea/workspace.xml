@@ -7,20 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e6dc14a-180c-4adf-95dc-cc28cf93dd53" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/business/custom/OrderBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/business/custom/OrderBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/business/custom/impl/CustomerBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/business/custom/impl/CustomerBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/business/custom/impl/ItemBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/business/custom/impl/ItemBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/business/custom/impl/OrderBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/business/custom/impl/OrderBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/controller/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/dao/custom/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/dao/custom/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/dao/custom/QueryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/dao/custom/QueryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/dao/custom/impl/QueryDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/madushanka/webmvc/dao/custom/impl/QueryDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +59,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="PracticeWEBMVC" />
+        <entry key="$PROJECT_DIR$" value="SpringBootUsing" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -373,10 +360,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="694" y="238" width="672" height="530" key="find.popup/0.27.1366.741@0.27.1366.741" timestamp="1580634739826" />
-    <state x="450" y="112" width="456" height="566" key="git4idea.branch.GitSmartOperationDialog" timestamp="1580649555519">
+    <state x="450" y="112" width="456" height="566" key="git4idea.branch.GitSmartOperationDialog" timestamp="1580716237289">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="450" y="112" width="456" height="566" key="git4idea.branch.GitSmartOperationDialog/0.27.1366.741@0.27.1366.741" timestamp="1580649555519" />
+    <state x="450" y="112" width="456" height="566" key="git4idea.branch.GitSmartOperationDialog/0.27.1366.741@0.27.1366.741" timestamp="1580716237289" />
     <state x="432" y="457" width="672" height="677" key="run.anything.popup" timestamp="1580637952813">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
